@@ -21,4 +21,4 @@ jobs:
 
     - name: Upload to Azure Storage
       run: |
-        az storage blob upload-batch -d 'policy' -s .
+        az storage blob upload-batch -d 'policy' -s . --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
