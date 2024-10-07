@@ -30,8 +30,8 @@ jobs:
 
     - name: List Containers
       run: |
-        az storage container list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --auth-mode login --debug
+        az storage container list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --auth-mode login
 
     - name: Upload to Azure Storage
       run: |
-        az storage blob upload-batch -d 'skatt' -s . --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --auth-mode login --debug
+        az storage blob upload-batch -d 'policy' -s . --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --auth-mode login
