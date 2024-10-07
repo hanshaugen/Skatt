@@ -12,6 +12,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Update Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+    - name: Install Azure CLI Extensions
+      run: |
+        az extension add --name storage-preview
+        az extension add --name account
+
     - name: Login to Azure
       uses: azure/login@v1
       with:
